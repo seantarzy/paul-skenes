@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "./Skenes.css";
-export default function Home() {
+export default async function Home({ data }: { data: any }) {
+  console.log(data);
   return (
     <div className="bg-slate-950 flex flex-col items-center h-[100vh] w-100[vw] pt-12">
       <h1 className="text-slate-300 text-2xl md:text-7xl font-serif">
@@ -18,4 +19,14 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+async function getServerSideProps() {
+  const data = await fetch("api/stats").then((res) => res.json());
+
+  return {
+    props: {
+      data
+    }
+  };
 }
