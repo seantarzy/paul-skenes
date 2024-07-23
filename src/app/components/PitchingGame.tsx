@@ -403,6 +403,7 @@ const PitchingGame: React.FC = () => {
               alt="Rafael Devers"
               width={hittingFrames[hitFrame].width}
               height={hittingFrames[hitFrame].height}
+              layout="fixed"
             />
           </div>
         </div>

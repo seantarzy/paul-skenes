@@ -32,7 +32,9 @@ export default function RootLayout({
       </Head>
       <body className={inter.className}>
         <Navigation />
-        {children}
+        <div className="bg-slate-950 flex flex-col text-center items-center h-[100vh] w-100[vw] pt-12 overflow-scroll">
+          {children}
+        </div>
       </body>
     </html>
   );
