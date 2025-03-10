@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 import Navigation from "./components/Navigation";
+import GoogleAnalytics from "./analytics/GoogleAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -57,8 +58,8 @@ export default function RootLayout({
           content="https://paulskenes.com/skenes-throw.png"
         />
         <link rel="icon" href="./favicon.ico" />
-        <link rel="stylesheet" href="/fonts/inter.css" />
       </Head>
+      <GoogleAnalytics />
       <body className={inter.className}>
         <Navigation />
         <div className="bg-slate-950 flex flex-col text-center items-center h-[100vh] w-[100vw] pt-12 overflow-scroll">
