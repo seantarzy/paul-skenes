@@ -1,8 +1,10 @@
 export default function About() {
   return (
     <div>
-      <h1 className="text-slate-300 text-4xl md:text-7xl font-serif">About</h1>
-      <div className="h-[250px] text-slate-300 text-lg md:text-2xl font-serif m-24 pb-4 px-2">
+      <h1 className="mt-2 text-slate-300 text-4xl md:text-7xl font-serif">
+        About
+      </h1>
+      <div className=" text-slate-300 text-lg md:text-2xl font-serif m-24 pb-4 md:px-2 overflow-scroll h-[550px]">
         <p>
           Paul Skenes, born on May 29, 2002, in Fullerton, California, is a
           professional baseball pitcher for the Pittsburgh Pirates. He attended
