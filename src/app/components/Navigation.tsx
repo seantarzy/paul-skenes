@@ -7,7 +7,7 @@ import { twMerge } from "tailwind-merge";
 const navLinks = [
   { href: "/", text: "Home" },
   { href: "/about", text: "About" },
-  { href: "/games", text: "Games" },
+  { href: "/game-schedule", text: "Game Schedule" },
   { href: "/contact", text: "Contact" }
 ];
 
