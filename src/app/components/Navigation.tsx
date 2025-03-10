@@ -21,7 +21,7 @@ function NavItem({
       <Link
         href={href}
         className={twMerge(
-          "text-yellow-900 text-2xl font-serif hover:bg-yellow-900 hover:text-slate-950 active:text-green-900 rounded",
+          "text-yellow-900 text-lg md:text-2xl font-serif hover:bg-yellow-900 hover:text-slate-950 active:text-green-900 rounded",
           selected && "text-green-900"
         )}
       >
