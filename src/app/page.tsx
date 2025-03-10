@@ -1,7 +1,6 @@
 import Image from "next/image";
 import "./Skenes.css";
 import Head from "next/head";
-import GoogleAnalytics from "./analytics/GoogleAnalytics";
 import DiscordCTA from "./contact/components/DiscordCTA";
 export default async function Home() {
   return (
@@ -12,7 +11,6 @@ export default async function Home() {
         <link rel="icon" href="./favicon.ico" />
         <link rel="stylesheet" href="/fonts/inter.css" />
       </Head>
-      <GoogleAnalytics />
       <div className="text-slate-300 font-serif">
         <h1 className="text-2xl md:text-7xl">Paul Skenes</h1>
         <br />
