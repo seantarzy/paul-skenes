@@ -1,4 +1,3 @@
-import { env } from "process";
 import EmailMeBox from "./components/EmailMeBox";
 
 export default function Contact() {

@@ -1,5 +1,5 @@
 // page for game schedule
-import GameSchedule from "../contact/components/GameSchedule";
+import GameSchedule from "../components/GameSchedule";
 
 export default function GameSchedulePage() {
   return (

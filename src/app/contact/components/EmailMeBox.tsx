@@ -1,7 +1,3 @@
-"use client";
-
-import { FormEvent, useState } from "react";
-
 export default function EmailMeBox() {
   return (
     <div className="max-w-lg mx-auto mt-8 p-6 bg-gray-800 rounded-lg shadow-md md:w-96 cursor-pointer">
