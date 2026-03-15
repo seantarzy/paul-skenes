@@ -1,5 +1,7 @@
 'use client'
 
+import { trackMerchClick } from '../analytics/trackEvent';
+
 export default function MerchPage() {
   const merchCategories = [
     {
@@ -144,6 +146,7 @@ export default function MerchPage() {
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                       className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors"
+                      onClick={() => trackMerchClick(item.title, item.store, item.url)}
                     >
                       Shop Now →
                     </a>

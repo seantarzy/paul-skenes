@@ -1,5 +1,7 @@
 'use client'
 
+import { trackMerchClick } from '../analytics/trackEvent';
+
 export default function MerchLinks() {
   const merchLinks = [
     {
@@ -38,6 +40,7 @@ export default function MerchLinks() {
             target="_blank"
             rel="noopener noreferrer nofollow"
             className={`${link.color} text-white rounded-lg p-6 transition-all transform hover:scale-105 shadow-lg`}
+            onClick={() => trackMerchClick(link.title, link.store, link.url)}
           >
             <div className="text-sm uppercase tracking-wide opacity-75 mb-2">
               {link.store}
