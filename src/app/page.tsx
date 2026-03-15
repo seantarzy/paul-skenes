@@ -2,9 +2,11 @@ import Image from "next/image";
 import "./Skenes.css";
 import Head from "next/head";
 import DiscordCTA from "./contact/components/DiscordCTA";
+import MerchLinks from "./components/MerchLinks";
+
 export default async function Home() {
   return (
-    <div className="bg-slate-950 flex flex-col items-center h-[100vh] w-100[vw] pt-12">
+    <div className="bg-slate-950 flex flex-col items-center min-h-screen w-full pt-12 pb-12">
       <Head>
         <title>Paul Skenes</title>
         <meta name="description" content="Best pitcher ever?" />
@@ -22,7 +24,7 @@ export default async function Home() {
       </div>
 
       <br />
-      <div className="h-[250px]">
+      <div className="h-[250px] mb-8">
         <Image
           src="/skenes-throw.png"
           alt="Paul Skenes throwing a pitch"
@@ -31,6 +33,8 @@ export default async function Home() {
           height={250}
         />
       </div>
+
+      <MerchLinks />
     </div>
   );
 }

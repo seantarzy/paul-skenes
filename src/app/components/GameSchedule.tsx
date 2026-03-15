@@ -21,8 +21,9 @@ export default function GameSchedule() {
 
   useEffect(() => {
     async function fetchSchedule() {
+      const currentYear = new Date().getFullYear();
       const response = await fetch(
-        "https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=134&season=2024"
+        `https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=134&season=${currentYear}`
       );
       const data = await response.json();
       const upcomingGames = data.dates.slice(0, 5).map((game: any) => game.games[0]);
