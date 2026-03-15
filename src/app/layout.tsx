@@ -35,6 +35,14 @@ export default function RootLayout({
           content="Paul Skenes - The Future of Pitching"
         />
         <meta
+          name="google-site-verification"
+          content="0Sg1YhDXEWfCcYWYCpDr1iSDen13d1Kt6SA8sWojvKc"
+        />
+        <meta
+          name="impact-site-verification"
+          content="be80dbbc-2129-42db-94b7-f093208f3bf0"
+        />
+        <meta
           property="og:description"
           content="Live updates on Paul Skenes' MLB career. Join the fan community today!"
         />
