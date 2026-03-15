@@ -39,10 +39,6 @@ export default function RootLayout({
           content="0Sg1YhDXEWfCcYWYCpDr1iSDen13d1Kt6SA8sWojvKc"
         />
         <meta
-          name="impact-site-verification"
-          content="be80dbbc-2129-42db-94b7-f093208f3bf0"
-        />
-        <meta
           property="og:description"
           content="Live updates on Paul Skenes' MLB career. Join the fan community today!"
         />
@@ -69,6 +65,7 @@ export default function RootLayout({
       </Head>
       <GoogleAnalytics />
       <body className={inter.className}>
+        <span style={{ display: 'none' }}>Impact-Site-Verification: be80dbbc-2129-42db-94b7-f093208f3bf0</span>
         <Navigation />
         <div className="bg-slate-950 flex flex-col text-center items-center h-[100vh] w-[100vw] pt-12 overflow-scroll">
           {children}
