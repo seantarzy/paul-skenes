@@ -1,5 +1,7 @@
 'use client'
 
+import { trackMerchClick } from '../analytics/trackEvent';
+
 export default function MerchLinks() {
   const merchLinks = [
     {
@@ -12,7 +14,7 @@ export default function MerchLinks() {
     {
       title: "Paul Skenes Gear",
       description: "Browse all Paul Skenes merchandise",
-      url: "https://www.fanatics.com/mlb/pittsburgh-pirates/o-4565+t-92448969+z-91146-3114913196",
+      url: "http://www.fanatics.com/affiliates/x-2712+z-928231036-1795439153",
       store: "Fanatics",
       color: "bg-blue-600 hover:bg-blue-700"
     },
@@ -38,6 +40,7 @@ export default function MerchLinks() {
             target="_blank"
             rel="noopener noreferrer nofollow"
             className={`${link.color} text-white rounded-lg p-6 transition-all transform hover:scale-105 shadow-lg`}
+            onClick={() => trackMerchClick(link.title, link.store, link.url)}
           >
             <div className="text-sm uppercase tracking-wide opacity-75 mb-2">
               {link.store}

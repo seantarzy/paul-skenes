@@ -1,5 +1,7 @@
 'use client'
 
+import { trackMerchClick } from '../analytics/trackEvent';
+
 export default function MerchPage() {
   const merchCategories = [
     {
@@ -16,21 +18,21 @@ export default function MerchPage() {
           title: "Paul Skenes Replica Jersey",
           description: "Affordable replica jersey",
           price: "$80+",
-          url: "https://www.fanatics.com/mlb/pittsburgh-pirates/o-4565+t-92448969+z-91146-3114913196",
+          url: "http://www.fanatics.com/affiliates/x-2712+z-928231036-1795439153",
           store: "Fanatics"
         },
         {
           title: "Pirates T-Shirts",
           description: "Paul Skenes themed t-shirts and tees",
           price: "$25+",
-          url: "https://www.fanatics.com/mlb/pittsburgh-pirates/t-shirts/o-3443+t-70220858+d-89886642+z-9-3281177128",
+          url: "http://www.fanatics.com/affiliates/x-2712+z-928231036-1795439153",
           store: "Fanatics"
         },
         {
           title: "Pirates Hoodies",
           description: "Show your support in style",
           price: "$50+",
-          url: "https://www.fanatics.com/mlb/pittsburgh-pirates/sweatshirts/o-1254+t-47557747+d-01447531+z-9-3414606847",
+          url: "http://www.fanatics.com/affiliates/x-2712+z-928231036-1795439153",
           store: "Fanatics"
         }
       ]
@@ -68,14 +70,14 @@ export default function MerchPage() {
           title: "Signed Memorabilia",
           description: "Autographed photos and baseballs",
           price: "$100+",
-          url: "https://www.fanatics.com/mlb/pittsburgh-pirates/autographs/o-3465+t-70117858+d-56118642+z-9-3573042660",
+          url: "http://www.fanatics.com/affiliates/x-2712+z-928231036-1795439153",
           store: "Fanatics Authentic"
         },
         {
           title: "Pirates Caps & Hats",
           description: "Official New Era caps",
           price: "$30+",
-          url: "https://www.fanatics.com/mlb/pittsburgh-pirates/hats/o-2354+t-36339636+d-45662086+z-9-1685491372",
+          url: "http://www.fanatics.com/affiliates/x-2712+z-928231036-1795439153",
           store: "Fanatics"
         }
       ]
@@ -144,6 +146,7 @@ export default function MerchPage() {
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                       className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors"
+                      onClick={() => trackMerchClick(item.title, item.store, item.url)}
                     >
                       Shop Now →
                     </a>
