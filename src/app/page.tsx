@@ -1,7 +1,6 @@
 import Image from "next/image";
 import "./Skenes.css";
 import Head from "next/head";
-import DiscordCTA from "./contact/components/DiscordCTA";
 import MerchLinks from "./components/MerchLinks";
 
 export default async function Home() {
@@ -18,11 +17,6 @@ export default async function Home() {
         <br />
         <h2 className="text-xl md:text-4xl"> Fan Site </h2>
       </div>
-      <br />
-      <div>
-        <DiscordCTA />
-      </div>
-
       <br />
       <div className="h-[250px] mb-8">
         <Image

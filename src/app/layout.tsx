@@ -62,27 +62,27 @@ export default function RootLayout({
           content="https://paulskenes.com/skenes-throw.png"
         />
         <link rel="icon" href="./favicon.ico" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Paul Skenes",
+              "jobTitle": "Professional Baseball Pitcher",
+              "affiliation": {
+                "@type": "SportsTeam",
+                "name": "Pittsburgh Pirates",
+                "sport": "Baseball"
+              },
+              "url": "https://paulskenes.com",
+              "sameAs": [
+                "https://www.mlb.com/player/paul-skenes-808967"
+              ]
+            })
+          }}
+        />
       </Head>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Paul Skenes",
-            "jobTitle": "Professional Baseball Pitcher",
-            "affiliation": {
-              "@type": "SportsTeam",
-              "name": "Pittsburgh Pirates",
-              "sport": "Baseball"
-            },
-            "url": "https://paulskenes.com",
-            "sameAs": [
-              "https://www.mlb.com/player/paul-skenes-808967"
-            ]
-          })
-        }}
-      />
       <GoogleAnalytics />
       <body className={inter.className}>
         <span style={{ display: 'none' }}>Impact-Site-Verification: be80dbbc-2129-42db-94b7-f093208f3bf0</span>
