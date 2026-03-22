@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Paul Skenes",
+  description: "Learn about Paul Skenes — Pittsburgh Pirates pitcher, 2024 NL Rookie of the Year, LSU College World Series champion, and first overall 2023 MLB Draft pick.",
+  alternates: { canonical: "https://paulskenes.com/about" }
+};
+
 export default function About() {
   return (
     <div>

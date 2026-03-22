@@ -1,14 +1,13 @@
-'use client'
+import type { Metadata } from "next";
+import PitchingGame from "../components/PitchingGame";
 
-import { useState } from 'react';
-import PitchingGame from './PitchingGame';
-import TriviaGame from './TriviaGame';
+export const metadata: Metadata = {
+  title: "Paul Skenes Games",
+  description: "Play Paul Skenes pitching games and trivia. Test your knowledge of the Pittsburgh Pirates ace.",
+  alternates: { canonical: "https://paulskenes.com/games" }
+};
 
-type Tab = 'pitch' | 'trivia';
-
-export default function GamesPage() {
-  const [tab, setTab] = useState<Tab>('pitch');
-
+export default function Games() {
   return (
     <div className="min-h-screen py-12 px-4 w-full max-w-3xl mx-auto">
       <div className="text-center mb-10">

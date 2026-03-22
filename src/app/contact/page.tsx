@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import EmailMeBox from "./components/EmailMeBox";
+
+export const metadata: Metadata = {
+  title: "Contact | PaulSkenes.com",
+  description: "Get in touch with PaulSkenes.com.",
+  alternates: { canonical: "https://paulskenes.com/contact" }
+};
 
 export default function Contact() {
   return (
