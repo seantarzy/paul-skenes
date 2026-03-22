@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import StatsDisplay from "../components/StatsDisplay";
 
 export const metadata: Metadata = {
   title: "Paul Skenes Stats",

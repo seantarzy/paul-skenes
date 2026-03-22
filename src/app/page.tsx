@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import MerchLinks from "./components/MerchLinks";
 import "./Skenes.css";
 
 export const metadata: Metadata = {
