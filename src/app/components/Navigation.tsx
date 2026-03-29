@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/about", text: "About" },
   { href: "/stats", text: "Stats" },
   { href: "/game-schedule", text: "Game Schedule" },
-  { href: "/merch", text: "Merch" },
   { href: "/games", text: "Games" },
   { href: "/contact", text: "Contact" }
 ];
