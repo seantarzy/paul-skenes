@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     default: "Paul Skenes | Pittsburgh Pirates Pitcher",
     template: "%s | PaulSkenes.com"
   },
-  description: "The official fan site for Paul Skenes, Pittsburgh Pirates pitcher and 2024 NL Rookie of the Year. Stats, merch, game schedule, and more.",
-  keywords: ["Paul Skenes", "Paul Skenes pitcher", "Pittsburgh Pirates", "Paul Skenes stats", "Paul Skenes jersey", "MLB pitcher", "Pirates baseball"],
+  description: "The official fan site for Paul Skenes, Pittsburgh Pirates pitcher and 2024 NL Rookie of the Year. Stats, game schedule, news, and more.",
+  keywords: ["Paul Skenes", "Paul Skenes pitcher", "Pittsburgh Pirates", "Paul Skenes stats", "MLB pitcher", "Pirates baseball", "Paul Skenes schedule"],
   openGraph: {
     title: "Paul Skenes | Pittsburgh Pirates Pitcher",
     description: "The official fan site for Paul Skenes, Pittsburgh Pirates pitcher and 2024 NL Rookie of the Year.",
