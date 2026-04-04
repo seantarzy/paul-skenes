@@ -9,39 +9,41 @@
 // Types
 // ---------------------------------------------------------------------------
 
-type EventParams = Record<string, string | number | boolean | undefined>;
+interface EventParams {
+  [key: string]: string | number | boolean | undefined;
+}
 
-interface CTAClickParams {
+interface CTAClickParams extends EventParams {
   cta_text: string;
   cta_location: string;
   cta_destination?: string;
 }
 
-interface OutboundClickParams {
+interface OutboundClickParams extends EventParams {
   url: string;
   link_text?: string;
   link_location?: string;
 }
 
-interface NavigationClickParams {
+interface NavigationClickParams extends EventParams {
   destination: string;
   nav_location: "header" | "footer" | "sidebar" | "inline";
 }
 
-interface ContentEngagementParams {
+interface ContentEngagementParams extends EventParams {
   content_type: string;
   content_id?: string;
   engagement_type: "scroll_depth" | "time_on_content" | "interaction";
   value?: number;
 }
 
-interface ShareClickParams {
+interface ShareClickParams extends EventParams {
   method: "clipboard" | "native_share" | "twitter" | "facebook" | "email" | string;
   content_type?: string;
   content_id?: string;
 }
 
-interface ErrorParams {
+interface ErrorParams extends EventParams {
   error_type: string;
   error_message: string;
   error_location?: string;

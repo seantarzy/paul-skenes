@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Button from "./Button";
 import { PitchSelect } from "./types";
 
@@ -43,11 +43,11 @@ const Slider: React.FC<SliderProps> = ({ onStop, difficulty, pitchType }) => {
     return () => cancelAnimationFrame(animationFrame);
   }, [moving]);
 
-  const handleStop = () => {
+  const handleStop = useCallback(() => {
     setMoving(false);
     const accuracy = Math.abs(50 - position);
     onStop(accuracy);
-  };
+  }, [position, onStop]);
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
@@ -58,7 +58,7 @@ const Slider: React.FC<SliderProps> = ({ onStop, difficulty, pitchType }) => {
 
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
-  }, []);
+  }, [handleStop]);
 
   return (
     // slider container
