@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { trackGamePlay } from '@/lib/analytics';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type Phase = 'location' | 'speed' | 'accuracy' | 'result';
@@ -255,6 +256,7 @@ export default function PitchingGame() {
     if (phase === 'result' && selectedZone !== null) {
       const r = buildResult(speedScore, accScore, selectedZone);
       setResult(r);
+      trackGamePlay("pitching_challenge", "pitch_result_" + r.outcome.toLowerCase().replace(/[^a-z]/g, ''));
       setTotals(prev => ({
         pitches: prev.pitches + 1,
         score: prev.score + (r.good ? 1 : r.outcome === 'BALL' ? 0 : -1),
@@ -311,7 +313,7 @@ export default function PitchingGame() {
           <StrikZoneGrid selected={selectedZone} onSelect={setZone} />
           <button
             disabled={selectedZone === null}
-            onClick={() => setPhase('speed')}
+            onClick={() => { trackGamePlay("pitching_challenge", "pitch_start"); setPhase('speed'); }}
             className="bg-yellow-600 hover:bg-yellow-700 disabled:opacity-30 disabled:cursor-not-allowed text-white px-8 py-2 rounded-lg font-semibold transition"
           >
             Pitch Here →

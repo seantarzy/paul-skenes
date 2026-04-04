@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react';
+import { trackGamePlay } from '@/lib/analytics';
 
 const questions = [
   {
@@ -66,19 +67,23 @@ export default function TriviaGame() {
   const handleAnswer = (idx: number) => {
     if (selected !== null) return;
     setSelected(idx);
-    if (idx === question.answer) setScore(s => s + 1);
+    const correct = idx === question.answer;
+    trackGamePlay("skenes_trivia", correct ? "answer_correct" : "answer_incorrect");
+    if (correct) setScore(s => s + 1);
   };
 
   const next = () => {
     setSelected(null);
     if (current + 1 >= questions.length) {
       setDone(true);
+      trackGamePlay("skenes_trivia", "completion", score);
     } else {
       setCurrent(c => c + 1);
     }
   };
 
   const reset = () => {
+    trackGamePlay("skenes_trivia", "play_again");
     setCurrent(0); setSelected(null); setScore(0); setDone(false);
   };
 

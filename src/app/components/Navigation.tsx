@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
+import { trackNavigationClick } from "@/lib/analytics";
 
 const navLinks = [
   { href: "/", text: "Home" },
@@ -22,6 +23,7 @@ function NavItem({
     <li>
       <Link
         href={href}
+        onClick={() => trackNavigationClick({ destination: href, nav_location: "header" })}
         className={twMerge(
           "text-yellow-900 text-lg md:text-2xl font-serif hover:bg-yellow-900 hover:text-slate-950 active:text-green-900 rounded",
           selected && "text-green-900"

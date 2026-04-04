@@ -2,6 +2,7 @@
 import { useState } from "react";
 import PitchingGame from "./PitchingGame";
 import TriviaGame from "./TriviaGame";
+import { trackGamePlay } from "@/lib/analytics";
 
 export default function GamesClient() {
   const [tab, setTab] = useState<'pitch' | 'trivia'>('pitch');
@@ -15,7 +16,7 @@ export default function GamesClient() {
 
       <div className="flex gap-2 justify-center mb-8">
         <button
-          onClick={() => setTab('pitch')}
+          onClick={() => { setTab('pitch'); trackGamePlay("pitching_challenge", "tab_switch"); }}
           className={`px-6 py-2 rounded-lg font-semibold text-sm transition ${
             tab === 'pitch'
               ? 'bg-yellow-600 text-white'
@@ -25,7 +26,7 @@ export default function GamesClient() {
           Pitching Challenge
         </button>
         <button
-          onClick={() => setTab('trivia')}
+          onClick={() => { setTab('trivia'); trackGamePlay("skenes_trivia", "tab_switch"); }}
           className={`px-6 py-2 rounded-lg font-semibold text-sm transition ${
             tab === 'trivia'
               ? 'bg-yellow-600 text-white'

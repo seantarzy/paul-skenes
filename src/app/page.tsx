@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import NextStart from "./components/NextStart";
 import NewsFeed from "./components/NewsFeed";
 import QuickStatsOverlay from "./components/QuickStatsOverlay";
+import CTALink from "./components/CTALink";
 import "./Skenes.css";
 
 export const metadata: Metadata = {
@@ -98,12 +98,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Link
-              href="/stats"
-              className="inline-block bg-yellow-600 hover:bg-yellow-500 text-slate-950 font-bold px-6 py-3 rounded-lg text-sm transition-colors whitespace-nowrap self-start md:self-center"
-            >
-              Full Pitch Breakdown →
-            </Link>
+            <CTALink href="/stats" text="Full Pitch Breakdown →" location="home_splinker_section" />
           </div>
         </div>
       </section>

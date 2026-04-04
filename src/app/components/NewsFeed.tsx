@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
+import { trackOutboundClick } from "@/lib/analytics";
 
 interface Article {
   title: string;
@@ -66,6 +67,7 @@ export default function NewsFeed() {
             href={article.url}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackOutboundClick({ url: article.url, link_text: article.title, link_location: "news_feed" })}
             className="flex gap-4 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-yellow-700/50 rounded-lg p-4 transition-all group"
           >
             {article.urlToImage && (
