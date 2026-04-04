@@ -58,8 +58,7 @@ function gtag(...args: unknown[]): void {
 }
 
 /** Send a custom GA4 event */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function trackEvent(eventName: string, params?: Record<string, any>): void {
+export function trackEvent(eventName: string, params?: EventParams): void {
   gtag("event", eventName, params);
 }
 
