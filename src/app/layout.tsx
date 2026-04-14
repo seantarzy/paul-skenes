@@ -5,6 +5,7 @@ import "./globals.css";
 import Head from "next/head";
 import Navigation from "./components/Navigation";
 import GoogleAnalytics from "./analytics/GoogleAnalytics";
+import DataDiveFeedback from "./components/DataDiveFeedback";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -104,6 +105,7 @@ export default function RootLayout({
         <div className="bg-slate-950 flex flex-col text-center items-center h-[100vh] w-[100vw] pt-12 overflow-scroll">
           {children}
         </div>
+        <DataDiveFeedback siteSlug="paul-skenes" accentColor="#eab308" />
       </body>
     </html>
   );
