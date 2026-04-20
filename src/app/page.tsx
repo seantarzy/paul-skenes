@@ -65,6 +65,10 @@ export default function Home() {
             <QuickStatsOverlay />
           </div>
         </div>
+
+        <div className="flex justify-center mt-6">
+          <CTALink href="/game-schedule" text="See his next start →" location="home_hero" />
+        </div>
       </div>
 
       {/* Next Game */}
