@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 import Navigation from "./components/Navigation";
+import DomainSaleBanner from "./components/DomainSaleBanner";
 import GoogleAnalytics from "./analytics/GoogleAnalytics";
 import DataDiveFeedback from "./components/DataDiveFeedback";
 const inter = Inter({ subsets: ["latin"] });
@@ -101,6 +102,7 @@ export default function RootLayout({
       <GoogleAnalytics />
       <body className={inter.className}>
         <span style={{ display: 'none' }}>Impact-Site-Verification: be80dbbc-2129-42db-94b7-f093208f3bf0</span>
+        <DomainSaleBanner />
         <Navigation />
         <div className="bg-slate-950 flex flex-col text-center items-center h-[100vh] w-[100vw] pt-12 overflow-scroll">
           {children}

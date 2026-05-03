@@ -1,17 +1,36 @@
-'use client'
+"use client";
 
-import { trackCTAClick } from '@/lib/analytics';
+import { trackCTAClick } from "@/lib/analytics";
 
-export default function EmailMeBox() {
+interface EmailMeBoxProps {
+  subject?: string;
+  buttonText?: string;
+  ctaLocation?: string;
+}
+
+export default function EmailMeBox({
+  subject,
+  buttonText,
+  ctaLocation = "contact_page"
+}: EmailMeBoxProps) {
+  const email = process.env.NEXT_PUBLIC_EMAIL;
+  const href = subject
+    ? `mailto:${email}?subject=${encodeURIComponent(subject)}`
+    : `mailto:${email}`;
+
   return (
-    <div className="max-w-lg mx-auto mt-8 p-6 bg-gray-800 rounded-lg shadow-md md:w-96 cursor-pointer">
-      <a
-        href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
-        onClick={() => trackCTAClick({ cta_text: "Email Me", cta_location: "contact_page", cta_destination: "mailto" })}
-        className="text-2xl font-serif text-yellow-300"
-      >
-        Email Me @ {process.env.NEXT_PUBLIC_EMAIL}
-      </a>
-    </div>
+    <a
+      href={href}
+      onClick={() =>
+        trackCTAClick({
+          cta_text: buttonText ?? "Email Me",
+          cta_location: ctaLocation,
+          cta_destination: "mailto"
+        })
+      }
+      className="inline-block bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-semibold text-base md:text-lg px-6 py-3 rounded-lg shadow-md transition-colors"
+    >
+      {buttonText ?? `Email ${email}`}
+    </a>
   );
 }
